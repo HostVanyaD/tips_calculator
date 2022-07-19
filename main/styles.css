@@ -1,0 +1,73 @@
+body {
+    background-color: hsl(185, 41%, 84%);
+    font-family: 'Space Mono';
+}
+
+h1 {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+h3 {
+    padding: 0 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    flex-basis: 100%;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+}
+
+.calculator-container {
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.left-container {
+    flex: 1 1 50%;
+}
+
+.right-container {
+    flex: 1 1 50%;
+}
+
+.inline-form {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 350px;
+    margin: auto;
+}
+
+.input-icons i {
+    position: absolute;
+}
+
+.input-icons {
+    display: flex;
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 10px;
+    min-width: 40px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: end;
+    margin-bottom: 3px;
+}
