@@ -31,29 +31,34 @@
 <body>
   <div class="container">
     <h1 class="title">spli<br />tter</h1>
-    <div class="calculator-container">
+    <section class="calculator-container">
       <div class="left-container">
-        <h3>Bill</h3>
         <form class="inline-form">
+          <label for="bill">Bill</label>
           <div class="input-icons">
-            <i class="fa-solid fa-dollar-sign icon"></i>
-            <input class="input-field" type="text" placeholder="0">
+            <p class="icon">$</p>
+            <input class="input-field" id="bill" type="text" placeholder="0">
           </div>
         </form>
-        <!-- <i class="fa-solid fa-dollar-sign"></i>
-        <input class="bill-input" /> -->
-
-        Select Tip %
-        5%
-        10%
-        15%
-        25%
-        50%
-        Custom
-
-        <h3>Number of People</h3>
-        <i class="fa-solid fa-user"></i>
-        <input class="people-input" />
+        <div class="select-grid">
+          <label for="select-tip">Select Tip %</label>
+          <div class="select-grid-container" id="select-tip">
+            <input class="grid-item" value="5%">
+            <input class="grid-item" value="10%">
+            <input class="grid-item" value="15%">
+            <input class="grid-item" value="25%">
+            <input class="grid-item" value="50%">
+            <input class="grid-item custom-item" type="text" placeholder="Custom">
+          </div>
+        </div>
+        <form class="inline-form">
+          <label for="people">Number of People</label>
+          <div class="input-icons">
+            <p id="error"></p>
+            <p class="icon"><i class="fa-solid fa-user"></i></p>
+            <input class="input-field" id="people" type="text" placeholder="0">
+          </div>
+        </form>
       </div>
 
       <div class="right-container">
@@ -66,12 +71,12 @@
 
         Reset
       </div>
-    </div>
+    </section>
   </div>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Vanya Dimova</a>.
   </div>
 </body>
 

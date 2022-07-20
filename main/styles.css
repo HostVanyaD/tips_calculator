@@ -1,15 +1,16 @@
 body {
     background-color: hsl(185, 41%, 84%);
+    margin: 0px;
+}
+
+* {
     font-family: 'Space Mono';
 }
 
-h1 {
-    text-align: center;
-    padding: 2rem 0;
-}
-
-h3 {
-    padding: 0 0;
+label {
+    font-weight: 600;
+    color: hsl(186, 14%, 43%);
+    margin-bottom: 10px;
 }
 
 .container {
@@ -22,6 +23,8 @@ h3 {
 .title {
     flex-basis: 100%;
     text-transform: uppercase;
+    text-align: center;
+    padding: 1rem 0;
     letter-spacing: 3px;
     font-weight: 700;
     color: hsl(183, 100%, 15%);
@@ -31,37 +34,52 @@ h3 {
     background-color: hsl(0, 0%, 100%);
     display: flex;
     flex-wrap: wrap;
-    padding: 1.5rem;
-    border-radius: 15px;
+    gap: 20px;
+    padding: 25px;
+    border-radius: 25px;
 }
 
-.left-container {
-    flex: 1 1 50%;
+.left-container,
+.right-container {
+    flex: 1 1 49%;
 }
 
 .right-container {
-    flex: 1 1 50%;
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 15px;
+    color: hsl(0, 0%, 100%);
 }
 
 .inline-form {
     display: flex;
     flex-wrap: wrap;
-    max-width: 350px;
-    margin: auto;
+    flex-basis: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.input-icons i {
+.input-icons p {
     position: absolute;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: hsl(184, 14%, 56%);
 }
 
 .input-icons {
     display: flex;
-    width: 95%;
+    flex-basis: 100%;
     margin-bottom: 10px;
+    font-size: 24px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.input-icons:hover {
+    border: 2px solid hsl(172, 67%, 45%);
 }
 
 .icon {
-    padding: 10px;
+    padding: 10px 10px;
     min-width: 40px;
 }
 
@@ -69,5 +87,58 @@ h3 {
     width: 100%;
     padding: 10px;
     text-align: end;
-    margin-bottom: 3px;
+    background-color: hsl(189, 41%, 97%);
+    border-radius: 5px;
+    border: 0ch;
+    color: hsl(183, 100%, 15%);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.select-grid-container {
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px 15px;
+    justify-content: space-between;
+    margin: 15px 0px 25px 0px;
+}
+
+.grid-item {
+    background-color: hsl(183, 100%, 15%);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+    color: hsl(189, 41%, 97%);
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.custom-item {
+    text-align: right;
+    background-color: hsl(189, 41%, 97%);
+    border: none;
+    color: hsl(183, 100%, 15%);
+}
+
+.custom-item::placeholder {
+    text-align: center;
+}
+
+.grid-item:hover {
+    background-color: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.input-field:hover,
+.grid-item:hover {
+    cursor: pointer;
+}
+
+#error {
+    position: absolute;
+    right: 0;
+    color: orange;
+    font-weight: 700;
 }
