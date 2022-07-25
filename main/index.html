@@ -14,7 +14,6 @@
 
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
       font-size: 11px;
@@ -43,11 +42,11 @@
         <div class="select-grid">
           <label for="select-tip">Select Tip %</label>
           <div class="select-grid-container" id="select-tip">
-            <input class="grid-item" value="5%">
-            <input class="grid-item" value="10%">
-            <input class="grid-item" value="15%">
-            <input class="grid-item" value="25%">
-            <input class="grid-item" value="50%">
+            <input class="grid-item" disabled value="5%">
+            <input class="grid-item" disabled value="10%">
+            <input class="grid-item" disabled value="15%">
+            <input class="grid-item" disabled value="25%">
+            <input class="grid-item" disabled value="50%">
             <input class="grid-item custom-item" type="text" placeholder="Custom">
           </div>
         </div>
@@ -62,14 +61,27 @@
       </div>
 
       <div class="right-container">
-
-        Tip Amount
-        / person
-
-        Total
-        / person
-
-        Reset
+        <div class="result-container">
+          <div class="tip-label">
+            <h4>Tip Amount</h4>
+            <p>/ person</p>
+          </div>
+          <div class="tip-amount">
+            <div class="tip-value">$0.00</div>
+          </div>
+          <div class="total-label">
+            <h4>Total</h4>
+            <p>/ person</p>
+          </div>
+          <div class="total-amount">
+            <div class="total-value">$0.00</div>
+          </div>
+        </div>
+        <div class="btn-container">
+          <button type="reset">
+            Reset
+          </button>
+        </div>
       </div>
     </section>
   </div>

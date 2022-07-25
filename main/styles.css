@@ -1,6 +1,7 @@
 body {
     background-color: hsl(185, 41%, 84%);
     margin: 0px;
+    padding-bottom: 35px;
 }
 
 * {
@@ -20,13 +21,17 @@ label {
     justify-content: center;
 }
 
+h1 {
+    letter-spacing: 15px;
+}
+
 .title {
     flex-basis: 100%;
     text-transform: uppercase;
+    letter-spacing: 15px;
     text-align: center;
-    padding: 1rem 0;
-    letter-spacing: 3px;
-    font-weight: 700;
+    padding: 3rem 0;
+    font-weight: bold;
     color: hsl(183, 100%, 15%);
 }
 
@@ -35,19 +40,24 @@ label {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding: 25px;
+    padding: 30px;
     border-radius: 25px;
 }
 
 .left-container,
 .right-container {
-    flex: 1 1 49%;
+    flex: 1 1 48%;
 }
 
 .right-container {
+    display: flex;
     background-color: hsl(183, 100%, 15%);
     border-radius: 15px;
     color: hsl(0, 0%, 100%);
+    align-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .inline-form {
@@ -55,7 +65,6 @@ label {
     flex-wrap: wrap;
     flex-basis: 100%;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .input-icons p {
@@ -95,6 +104,10 @@ label {
     font-size: 24px;
 }
 
+.select-grid {
+    margin: 35px 0px 50px 0px;
+}
+
 .select-grid-container {
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
@@ -127,7 +140,7 @@ label {
 }
 
 .grid-item:hover {
-    background-color: hsl(172, 67%, 45%);
+    background-color: hsl(185, 49%, 81%);
     color: hsl(183, 100%, 15%);
 }
 
@@ -141,4 +154,78 @@ label {
     right: 0;
     color: orange;
     font-weight: 700;
+}
+
+.result-container {
+    width: 85%;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    padding: 25px;
+    justify-items: start;
+    justify-content: start;
+    text-align: start;
+}
+
+.result-container h4 {
+    margin-bottom: 0;
+    font-size: smaller;
+}
+
+.result-container p {
+    margin-top: 0;
+    font-size: smaller;
+    font-weight: bolder;
+    color: hsl(184, 14%, 56%);
+}
+
+.tip-amount,
+.total-amount {
+    justify-self: end;
+}
+
+.tip-value,
+.total-value {
+    color: hsl(172, 67%, 45%);
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.btn-container {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 35px;
+}
+
+button {
+    width: 85%;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    text-transform: uppercase;
+    font-size: medium;
+    font-weight: 900;
+    color: hsl(183, 100%, 15%);
+    background-color: hsl(172, 67%, 45%);
+}
+
+/* ----------media queries----------- */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width:600px) {
+    .calculator-container {
+        flex-basis: 100%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width:768px) {
+    .calculator-container {
+        flex-basis: 80%;
+    }
+}
+
+@media only screen and (min-width:1380px) {
+    .calculator-container {
+        flex-basis: 60%;
+    }
 }
