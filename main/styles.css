@@ -64,7 +64,6 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
-    margin-top: 10px;
 }
 
 .input-icons p {
@@ -83,7 +82,8 @@ h1 {
     border-radius: 5px;
 }
 
-.input-icons:hover {
+.input-icons:hover,
+.input-icons:focus-visible {
     border: 2px solid hsl(172, 67%, 45%);
 }
 
@@ -110,8 +110,8 @@ h1 {
 
 .select-grid-container {
     display: grid;
-    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(48px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(117px, 1fr));
     gap: 15px 15px;
     justify-content: space-between;
     margin: 15px 0px 25px 0px;
@@ -131,7 +131,7 @@ h1 {
 .custom-item {
     text-align: right;
     background-color: hsl(189, 41%, 97%);
-    border: none;
+    border: solid 2px transparent;
     color: hsl(183, 100%, 15%);
 }
 
@@ -140,12 +140,13 @@ h1 {
 }
 
 .grid-item:hover {
-    background-color: hsl(185, 49%, 81%);
+    background-color: #9FE8DF;
     color: hsl(183, 100%, 15%);
 }
 
 .input-field:hover,
-.grid-item:hover {
+.grid-item:hover,
+button:hover {
     cursor: pointer;
 }
 
@@ -209,6 +210,10 @@ button {
     background-color: hsl(172, 67%, 45%);
 }
 
+button:hover {
+    background-color: hsl(185, 49%, 81%);
+}
+
 /* ----------media queries----------- */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width:600px) {
@@ -220,12 +225,18 @@ button {
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width:768px) {
     .calculator-container {
-        flex-basis: 80%;
+        flex-basis: 84%;
     }
 }
 
-@media only screen and (min-width:1380px) {
+@media only screen and (min-width:1240px) {
     .calculator-container {
-        flex-basis: 60%;
+        flex-basis: 64%;
+    }
+}
+
+@media only screen and (min-width:1634px) {
+    .calculator-container {
+        flex-basis: 58%;
     }
 }
