@@ -64,6 +64,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
+    justify-content: space-between;
 }
 
 .input-icons p {
@@ -104,6 +105,11 @@ h1 {
     font-size: 24px;
 }
 
+.input-field:hover,
+.input-field:focus-visible {
+    outline: none;
+}
+
 .select-grid {
     margin: 35px 0px 50px 0px;
 }
@@ -139,7 +145,8 @@ h1 {
     text-align: center;
 }
 
-.grid-item:hover {
+.grid-item:hover,
+.btn--selected {
     background-color: #9FE8DF;
     color: hsl(183, 100%, 15%);
 }
@@ -151,10 +158,11 @@ button:hover {
 }
 
 #error {
-    position: absolute;
-    right: 0;
     color: orange;
+    font-size: smaller;
     font-weight: 700;
+    margin-top: 4px;
+    margin-bottom: auto;
 }
 
 .result-container {
@@ -198,7 +206,7 @@ button:hover {
     padding-bottom: 35px;
 }
 
-button {
+.btn-reset {
     width: 85%;
     border-radius: 5px;
     border: none;
@@ -210,7 +218,7 @@ button {
     background-color: hsl(172, 67%, 45%);
 }
 
-button:hover {
+.btn-reset:hover {
     background-color: hsl(185, 49%, 81%);
 }
 
