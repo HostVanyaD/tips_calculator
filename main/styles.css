@@ -141,6 +141,13 @@ h1 {
     color: hsl(183, 100%, 15%);
 }
 
+.custom-item:hover,
+.custom-item:focus-visible {
+    outline: none;
+    border-color: hsl(172, 67%, 45%);
+    border-width: 2px;
+}
+
 .custom-item::placeholder {
     text-align: center;
 }
@@ -204,6 +211,11 @@ button:hover {
     width: 100%;
     text-align: center;
     padding-bottom: 35px;
+}
+
+.btn-reset:disabled:hover {
+    background-color: hsl(186, 14%, 43%);
+    cursor: default;
 }
 
 .btn-reset {

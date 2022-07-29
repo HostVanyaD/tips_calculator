@@ -10,7 +10,13 @@ const resetBtn = document.querySelector('.btn-reset');
 
 let billValue = 0;
 let peopleNumber = 0;
-let tipPercent = 0.05;
+let tipPercent = 0.0;
+
+const setBillValue = (e) => {
+  e.preventDefault();
+  billValue = Number(e.target.value);
+  calcTip();
+};
 
 const setTipValue = (e) => {
   e.preventDefault();
@@ -28,25 +34,46 @@ const setTipValue = (e) => {
     btn.classList.add('btn--selected');
     tipPercent = parseFloat(btn.value) / 100;
   }
+
+  if (!Number.isNaN(tipPercent)) {
+    calcTip();
+  }
+};
+
+const setPeopleNumber = (e) => {
+  if (peopleInput.value <= 0) {
+    error.textContent = "Can't be zero";
+
+    setTimeout(() => {
+      error.textContent = '';
+    }, 2000);
+  }
+  peopleNumber = Number(peopleInput.value);
+  calcTip();
 };
 
 const calcTip = () => {
+  resetBtn.removeAttribute('disabled');
   if (peopleNumber > 0) {
     let totalTip = billValue * tipPercent;
     let tip = totalTip / peopleNumber;
     let total = (billValue + totalTip) / peopleNumber;
-
-    console.log(totalTip, tip, total);
 
     tipValue.textContent = `\$${tip.toFixed(2)}`;
     totalValue.textContent = `\$${total.toFixed(2)}`;
   }
 };
 
-billInput.addEventListener('input', (e) => {
-  e.preventDefault();
-  billValue = Number(e.target.value);
-});
+const clearFields = (e) => {
+  billInput.value = '';
+  peopleInput.value = '';
+  tipValue.textContent = '$0.00';
+  totalValue.textContent = '$0.00';
+  tipButtons.forEach((btn) => btn.classList.remove('btn--selected'));
+  resetBtn.setAttribute('disabled', 'true');
+};
+
+billInput.addEventListener('input', setBillValue);
 
 tipButtons.forEach((btn) => {
   if (btn.classList.contains('custom-item')) {
@@ -56,17 +83,9 @@ tipButtons.forEach((btn) => {
   }
 });
 
-peopleInput.addEventListener('input', (e) => {
-  if (peopleInput.value <= 0) {
-    error.textContent = "Can't be zero";
+peopleInput.addEventListener('input', setPeopleNumber);
 
-    setTimeout(() => {
-      error.textContent = '';
-    }, 2000);
-  }
-
-  peopleNumber = Number(peopleInput.value);
-});
+resetBtn.addEventListener('click', clearFields);
 
 document.onchange = () => {
   calcTip();
